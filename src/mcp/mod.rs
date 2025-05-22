@@ -57,6 +57,7 @@ impl WindowLayoutMCP {
                         当排布时,需要考虑窗口的间距,以及窗口的布局方式,如水平布局,垂直布局,网格布局,等
                         在排布窗口时,每排布一个窗口,就需要对当前窗口进行一次置前操作,以保证这个窗口可以正常的显示在屏幕中.
                         当排布计算超出所有屏幕边界时,回归原点重新计算坐标
+                        如果十分无法理解用户的诉求，请及时询问用户，以保证排布的准确性
                         "#.to_string())]);
         Ok(result)
     }
@@ -83,7 +84,7 @@ impl WindowLayoutMCP {
     }
 
     #[tool(description = r#"将窗口置前"#)]
-    pub async fn set_window_zindex(
+    pub async fn set_window_to_top(
         &self,
         #[tool(param)]
         #[schemars(description = "窗口句柄")]
